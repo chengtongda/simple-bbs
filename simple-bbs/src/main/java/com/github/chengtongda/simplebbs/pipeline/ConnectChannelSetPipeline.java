@@ -7,6 +7,11 @@ import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
 import org.jboss.netty.channel.SimpleChannelHandler;
 
+/**
+ * 处理连接上来的客户端
+ * @author tongda
+ *
+ */
 public class ConnectChannelSetPipeline extends SimpleChannelHandler {
 
 	private Set<Channel> channels;

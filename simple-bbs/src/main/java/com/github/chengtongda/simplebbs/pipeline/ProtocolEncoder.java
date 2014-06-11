@@ -25,7 +25,7 @@ public class ProtocolEncoder extends OneToOneEncoder {
 			ChannelBuffer writeBuffer = ChannelBuffers.dynamicBuffer();
 			
 			byte[] dataLength = BBSUtils.encode(datas.length);
-			
+			//协议格式    magicode(1)+datalength(4)+datas
 			writeBuffer.writeBytes(new byte[]{ProtocolConstants.MAGIC_CODE});
 			writeBuffer.writeBytes(dataLength);
 			writeBuffer.writeBytes(datas);

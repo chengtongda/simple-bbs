@@ -28,10 +28,12 @@ public class ProtocolDecoder extends FrameDecoder {
 		Protocol protocol = (Protocol) ctx.getAttachment();
 		if(protocol == null){
 			protocol = new Protocol();
+			//校验协议标准
 			if(buffer.readableBytes() < ProtocolConstants.MAGIC_CODE_SIZE + ProtocolConstants.DATA_LENTH_SIZE){
 				return null;
 			}else{
 				byte magicCode = buffer.readByte();
+				//检验魔数
 				checkMagicCode(magicCode);
 				protocol.setMagicCode(magicCode);
 				protocol.setDataLength(buffer.readInt());

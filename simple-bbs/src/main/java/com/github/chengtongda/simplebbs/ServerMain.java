@@ -53,7 +53,7 @@ public class ServerMain {
 			
 		});
 		
-		new Thread(new MessageSender(channels)).start();
+		new Thread(new MessageSender(channels)).start();//messageSender负责向客户端广播消息
 		bootstrap.bind(new InetSocketAddress(1230));
 	}
 
